@@ -1,23 +1,19 @@
 
 function toggleCheckbox() {
+    var billAndDelivery = document.getElementById('billAndDelivery');
     var billDeliveryAmount = document.getElementById('billDeliveryAmount');
+    var myCheckBox = document.getElementById('myCheckBox');
+    var billTotal = document.getElementById('billTotal');
 
-    switch (myCheckBox.checked == true) {
-        case true:
-            myCheckBox.checked = false;
-            console.log("Checked");
-            delivery = 1500;
-            billDeliveryAmount.innerText = "15 €";
-            break;
-        case false:
-            myCheckBox.checked == true;
-            console.log("Unchecked");
-            delivery = 0;
-            billDeliveryAmount.innerText = "0 €";
-            break;
-        default:
-            console.log("here went something wrong!");
+    // countTotal();
+    if (myCheckBox.checked) {
+        delivery = 1500;
+        billDeliveryAmount.innerText = "15 €";
+        billAndDelivery.innerText = (parseFloat(billTotal.innerText)*100 +delivery)/100;
+    } else {
+        delivery = 0;
+        billDeliveryAmount.innerText = "0 €";
+        billAndDelivery.innerText = billTotal.innerText;
     }
-    countTotal();
 }
 

@@ -34,7 +34,7 @@ function getfoodContentTemplate(i){
                 </div>`
 }
 
-function getBillingTemplate(bill,billHome,delivery){
+function getBillingTemplate(bill,billAndDelivery,delivery){
     return	`<div id="bill" class="foodCart foodCartBill">
                     <div class="foodCartBilling">
                         <p id="" class="cartTextCenter">Zwischensumme:</p>
@@ -48,14 +48,14 @@ function getBillingTemplate(bill,billHome,delivery){
                         <p id="" class="cartTextCenter">Selbstabholung:</p>
                         <div >
                             <label  class="switch" for="myCheckBox">
-                              <input  id="myCheckBox" type="checkbox" role="switch" onclick="toggleCheckbox()" >
+                              <input  id="myCheckBox" type="checkbox" role="switch" onclick="toggleCheckbox()" checked>
                               <span class="slider round"></span>
                             </label>
                         </div>
                     </div>
                     <div class="foodCartBilling">
                         <p id="" class="cartTextCenter">Gesamt:</p>
-                        <h3 id="billTotalAndDrive" class="cartTextCenter">${billHome} €</h3>
+                        <h3 id="billAndDelivery" class="cartTextCenter">${billAndDelivery} €</h3>
                     </div>
                 </div>`
 }
