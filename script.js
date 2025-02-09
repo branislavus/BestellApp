@@ -4,6 +4,20 @@ let cartContentRef = document.getElementById("renderCartContent");
 let cartContent = cartContentRef;
 let billContentRef = document.getElementById("renderBillContent");
 let billContent = billContentRef;
+let flyDemoRef = document.getElementById("flyDemo");
+let flyDemo = flyDemoRef;
+let restaurantContentRef = document.getElementById("restaurantContent");
+let restaurantContent = restaurantContentRef;
+let shopAppraisalRef = document.getElementById("shopAppraisal");
+let shopAppraisal = shopAppraisalRef;
+let shopTitleRef = document.getElementById("shopTitle");
+let shopTitle = shopTitleRef;
+let nav_divRef = document.getElementById("nav_div");
+let nav_div = nav_divRef;
+let nav_imageRef = document.getElementById("nav_image");
+let nav_image = nav_imageRef;
+let nav_spanRef = document.getElementById("nav_span");
+let nav_span = nav_spanRef;
 let switchButtonState = 0;
 let delivery = 1500;
 
@@ -43,7 +57,7 @@ function countTotal() {
     let billHome = 0;
     billHome = (element + switchButtonState + delivery) / 100;
     element = element / 100;
-    let deliveryBracket = (delivery / 100)+ " €";
+    let deliveryBracket = (delivery / 100) + " €";
     billContent.innerHTML += getBillingTemplate(element, billHome, deliveryBracket);
 }
 
@@ -67,4 +81,19 @@ function deleteMeal(index) {
     renderCart();
 }
 
-
+function toggleWarenkorb() {
+    if (billContent == "") {
+        return;
+    } else {
+        foodContent.classList.toggle("margin0");
+        restaurantContent.classList.toggle("flexDirCol");
+        restaurantContent.classList.toggle("aic");
+        shopAppraisal.classList.toggle("shopPoints");
+        shopAppraisal.classList.toggle("margin0");
+        shopTitle.classList.toggle("shopTitle");
+        foodContent.classList.toggle("displayNone");
+        nav_div.classList.toggle("jcc");
+        nav_image.classList.toggle("displayNone");
+        nav_span.classList.toggle("padding0");
+    }
+}

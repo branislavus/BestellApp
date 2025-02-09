@@ -9,7 +9,7 @@ function toggleCheckbox() {
     if (myCheckBox.checked) {
         delivery = 1500;
         billDeliveryAmount.innerText = "15 €";
-        billAndDelivery.innerText = (parseFloat(billTotal.innerText)*100 +delivery)/100;
+        billAndDelivery.innerText = (parseFloat(billTotal.innerText)*100 +delivery)/100 + " €";
     } else {
         delivery = 0;
         billDeliveryAmount.innerText = "0 €";

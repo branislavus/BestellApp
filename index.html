@@ -18,23 +18,26 @@
 
 <body id="body" onload="render()">
     <nav>
-        <div class="nav_div">
-            <img class="nav_image" src="./assets/icons/generic_basic_outline/star.png" alt="favicon">
-            <span class="nav_span">BestellApp</span>
+        <div class="nav_div" id="nav_div">
+            <img class="nav_image"  id="nav_image" src="./assets/icons/generic_basic_outline/star.png" alt="favicon">
+            <span class="nav_span"  id="nav_span">BestellApp</span>
         </div>
     </nav>
     <div>
         <div id="restaurantContent" class="restaurantContent">
             <div id="foodContent" class="foodContent">
                 <div id="flydemo" class=" flydemo">
-                    <h1 class="textShadow">Pizzeria Paradiso</h1>
-                    <h3 class="textShadowAppraisal">Bewertung (4,4 von 5 Sternen)</h3>
+                    <h1 id="shopTitle" class="textShadow">Pizzeria Paradiso</h1>
+                    <h3 id="shopAppraisal" class="textShadowAppraisal">Bewertung (4,4 von 5 Sternen)</h3>
                 </div>
                 <div id="renderFoodContent" class="renderFoodContent">
                 </div>
             </div>
             <div id="cartContent" class="cartContent">
-                <h1 class="cartTextCenter cartLabel">Warenkorb</h1>
+                <a href="#" id="warenkorb" class="warenkorb" onclick=" toggleWarenkorb()">
+                    <h1 class="cartTextCenter cartLabel">Warenkorb</h1>
+                </a>
+                
                 <div id="renderCartContent" class="renderCartContent">
                 </div>
                 <div id="renderBillContent" class="renderBillContent">

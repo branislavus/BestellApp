@@ -10,7 +10,7 @@ function getCartTemplate(j,sumOfPizzi){
                                     src="./assets/icons/add-button.png" alt=""></a>
                         </div>
                         <h5 class="df aic">${sumOfPizzi} €</h5>
-                        <a href="#"  onclick="deleteMeal(${j})" id="foodCartButtons"><img class="foodCartButtons" src="./assets/icons/dustbin.png"
+                        <a href="#"  onclick="deleteMeal(${j})" id="foodCartButtons"><img class="foodCartButtons foodCartButtonDelete" src="./assets/icons/dustbin.png"
                                 alt=""></a>
                     </div>
                     <div id="foodCardInfo" class="foodCardInfo">
@@ -28,7 +28,7 @@ function getfoodContentTemplate(i){
                     </div>
                     <img id="foodCardImage" class="foodCardImage" src="./assets/img/${pizzi[i].picture}" alt="">
                     <div id="foodCardButton" class="foodCardButton">
-                        <a href="#" id="foodCardButtonToCart" onclick="moveChosenMealToCart(${i})"><img class="foodCardButtonToCart" value="${i}"
+                        <a href="#" id="foodCardButtonToCart" onclick="moveChosenMealToCart(${i})"><img class="foodCardButtonToCartImg" id="foodCardButtonToCartImg" value="${i}"
                                 src="./assets/icons/add-button.png" alt=""></a>
                     </div>
                 </div>`
@@ -54,7 +54,7 @@ function getBillingTemplate(bill,billAndDelivery,delivery){
                         </div>
                     </div>
                     <div class="foodCartBilling">
-                        <p id="" class="cartTextCenter">Gesamt:</p>
+                        <p id="" class="cartTextCenter"><strong>Gesamt:</strong></p>
                         <h3 id="billAndDelivery" class="cartTextCenter">${billAndDelivery} €</h3>
                     </div>
                 </div>`
