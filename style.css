@@ -64,13 +64,13 @@ nav {
 }
 
 .flydemo {
-    background: url(./assets/img/fireInTheHole.jpg) repeat-x;
+    background: url(./assets/img/fireinthehole.jpg) repeat-x;
     width: 100%;
     margin: 20px 20px 20px auto;
-    border-radius: 0 20px 0 0;
+    border-radius: 20px 20px 0 0;
     max-width: 100%;
     height: 100px;
-    animation: flybirds 300s linear infinite;
+    animation: flybirds 50s linear infinite;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -344,6 +344,10 @@ input:checked+.slider:before {
 
 @media only screen and (max-width: 1300px) {
 
+    .renderFoodContent {
+        height: auto;
+        width: 100%;
+    }
 
     body {
         height: 100vh;
@@ -364,7 +368,7 @@ input:checked+.slider:before {
 
     .restaurantContent {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: start;
         background-color: #ebebeb;
@@ -389,8 +393,8 @@ input:checked+.slider:before {
 
     .foodContent {
         height: 100%;
-        width: 100% -300px;
-        margin: 0 20px 20px 20px;
+        width: 100%;
+        margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -401,28 +405,33 @@ input:checked+.slider:before {
 
     .cartContent {
         height: 100%;
-        width: 300px;
+        width: 100%;
         position: sticky;
         top: 10px;
         min-width: 320px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         margin-top: 20px;
     }
 
     .flydemo {
-        background: url(./assets/img/fireInTheHole.jpg) repeat-x;
+        background: url(./assets/img/fireinthehole.jpg) repeat-x;
         width: 100%;
-        margin: 20px 20px 20px auto;
-        border-radius: 0 20px 0 0;
-        max-width: 100%;
+        margin: 0;
+        border-radius: 20px 20px 0 0;
+
         height: auto;
-        animation: flybirds 300s linear infinite;
+        animation: flybirds 50s linear infinite;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
         -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
         box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+        margin-bottom: 20px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
     }
 
     @keyframes flybirds {
@@ -668,16 +677,54 @@ input:checked+.slider:before {
     .shopTitle {
         font-size: 33px;
         padding-left: 0px;
+        display: flex;
+        align-items: center;
     }
 
     .shopPoints {
         font-size: 14px;
         padding-left: 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .warenkorb {
+        display: flex;
+        justify-content: center;
     }
 
     .warenkorb:hover {
         background-color: #ffccaa;
+        display: flex;
+        justify-content: center;
+    }
 
+    nav {
+        height: 180px;
+        background-image: url(./assets/img/fireinthehole.jpg);
+        display: flex;
+    }
+
+    .nav_div {
+        height: 100%;
+        width: auto;
+        display: flex;
+    }
+
+    .nav_image {
+        display: none;
+
+    }
+
+    .nav_span {
+        color: aliceblue;
+        -webkit-text-stroke: 2px black;
+        font-size: 72px;
+        font-weight: 700;
+        padding-left: 10px;
+        padding-right: 60px;
+        display: flex;
+        justify-content: center;
     }
 
 }
