@@ -5,14 +5,43 @@ body {
     flex-direction: column;
 }
 
+
 nav {
+    height: 180px;
+    background-image: url(../assets/img/fireinthehole.jpg);
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
     box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
 }
 
+.nav_div {
+    height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 
 .nav_image {
-    background-image: #fff;
+    height: 160px;
+    width: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 10px;
+    filter: invert(1);
+}
+
+
+.nav_span {
+    color: black;
+    -webkit-text-stroke: 1px #ffffff;
+    font-size: 72px;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-right: 60px;
 }
 
 .restaurantContent {
@@ -338,6 +367,28 @@ input:checked+.slider:before {
 
 }
 
+footer {
+    height: 180px;
+    width: 100%;
+    background-color: #eb6a14;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer_span {
+    color: rgb(67, 67, 67);
+    font-size: 32px;
+    font-weight: 700;
+    -webkit-text-stroke: 0.3px aliceblue;
+    
+}
+
+.buttonOrder{
+    margin-top: 10px;
+}
+
 /* -------------------------------------------------------------- */
 /* -------------------------------------------------------------- */
 /* -------------------------------------------------------------- */
@@ -361,10 +412,34 @@ input:checked+.slider:before {
         box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
     }
 
+    nav {
+        height: 180px;
+        background-image: url(./assets/img/fireinthehole.jpg);
+        display: flex;
+    }
+
+    .nav_div {
+        height: 100%;
+        width: auto;
+        display: flex;
+    }
 
     .nav_image {
-        background-image: #fff;
+        display: none;
+
     }
+
+    .nav_span {
+        color: aliceblue;
+        -webkit-text-stroke: 2px black;
+        font-size: 72px;
+        font-weight: 700;
+        padding-left: 10px;
+        padding-right: 60px;
+        display: flex;
+        justify-content: center;
+    }
+
 
     .restaurantContent {
         display: flex;
@@ -699,13 +774,39 @@ input:checked+.slider:before {
         justify-content: center;
     }
 
-    nav {
-        height: 180px;
-        background-image: url(./assets/img/fireinthehole.jpg);
-        display: flex;
+
+}
+
+
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+
+    .renderFoodContent {
+        height: auto;
+        width: 100%;
     }
 
+    body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav {
+        width: 100%;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+        display: flex;
+        justify-content: center;
+    }
+
+
     .nav_div {
+        width: 100%;
         height: 100%;
         width: auto;
         display: flex;
@@ -717,19 +818,401 @@ input:checked+.slider:before {
     }
 
     .nav_span {
-        color: aliceblue;
-        -webkit-text-stroke: 2px black;
-        font-size: 72px;
+        width: 100%;
+        color: black ;
+        -webkit-text-stroke: 1px aliceblue;
+        font-size: 30px;
         font-weight: 700;
-        padding-left: 10px;
-        padding-right: 60px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 10px;
+        margin-bottom: 10px;
         display: flex;
         justify-content: center;
     }
 
+
+    .restaurantContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        background-color: #ebebeb;
+    }
+
+    .textShadow {
+     
+        padding-left: 24px;
+        display: flex;
+        -webkit-text-stroke: 0.8px aliceblue;
+        margin-left: 0;
+    }
+
+    .textShadowAppraisal {
+        padding-left: 24px;
+        display: flex;
+        -webkit-text-stroke: 0.5px aliceblue;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+
+    .foodContent {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    .cartContent {
+        height: auto;
+        width: 100%;
+        min-width: 280px;
+        position: sticky;
+        top: 10px;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .flyDemoWarenkorb{
+        background: url(./assets/img/fireInTheHole.jpg) repeat-x;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        max-width: 100%;
+        height: 60px;
+        animation: flybirds 300s linear infinite;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);  
+    }
+
+    .flydemo {
+        background: url(./assets/img/fireinthehole.jpg) repeat-x;
+        width: 100%;
+        margin: 0;
+        border-radius: 20px 20px 0 0;
+
+        height: auto;
+        animation: flybirds 50s linear infinite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+        margin-bottom: 20px;
+        margin-top: 20px;
+        padding-top: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    @keyframes flybirds {
+        from {
+            background-position: 400px -120px
+        }
+
+        to {
+            background-position: 0px 0px
+        }
+    }
+
+
+    .shopTitle {
+        font-size: 24px;
+        padding-left: 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .shopPoints {
+        font-size: 14px;
+        padding-left: 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .shopAppraisal {
+        font-size: 14px;
+        padding-left: 0;
+    }
+
+    .foodCard {
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 20px;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+        border-top: 0.5px solid #bebebe;
+        border-left: 0.5px solid #bebebe;
+        border-radius: 0 20px 0 0;
+        word-break: break-all;
+    }
+
+    .foodCard:hover {
+        width: 100%;
+        height: auto;
+        background-color: #feebdf;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 20px;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+        border-top: 0.5px solid #bebebe;
+        border-left: 0.5px solid #bebebe;
+        border-radius: 0 20px 0 0;
+        word-break: break-all;
+    }
+
+    .foodCardButtonToCartImg {
+        height: 50px;
+        width: 50px;
+        border-radius: 28px;
+        background-color: #eb6a14;
+    }
+
+    .foodCardButtonToCartImg:hover {
+        height: 50px;
+        width: 50px;
+        border-radius: 28px;
+        background-color: #ffffff;
+    }
+
+    .foodCardInfo {
+        width: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+
+    .infoFood {
+        display: none;
+    }
+
+    .nameFood {
+        font-size: 32px;
+    }
+
+    .ingredientsFood {
+        font-weight: 600;
+
+    }
+
+    .preisFood {
+        font-size: 22px;
+    }
+
+    .foodCardButtonToCart {
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+    }
+
+    .foodCardImage {
+        display: none;
+    }
+
+    .cartLabel {
+      
+        box-shadow: 0 2px 8px #21201826;
+        background-color: #ffffff;
+    }
+
+    .cartLabel:hover {
+   
+        box-shadow: 0 2px 8px #21201826;
+        background-color: #eb6a14;
+
+    }
+
+    .cartTextCenter {
+        text-align: center;
+
+    }
+
+    .foodCart {
+        width: 100%;
+        margin-top: 10px;
+        padding-top: 10px;
+        box-shadow: 0 2px 8px #21201826;
+        border-top: 0.5px solid #e6e6e6;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+
+    .cartButtonsTotal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 10px;
+    }
+
+    .cartButtonsTotalAmount {
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .foodCartButtons {
+        width: 24px;
+        height: 24px;
+        background-color: #eb6a14;
+        border-radius: 12px;
+    }
+
+
+    .foodCartButtons:hover {
+        background-color: #ffffff;
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+    }
+
+    .foodCartButtonDelete {
+        background-color: #ffffff;
+        border-radius: 7px;
+    }
+
+    .foodCartButtonDelete:hover {
+        border-radius: 7px;
+        box-shadow: 0 4px 20px 0 rgb(255, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .foodCartBilling {
+        display: flex;
+        justify-content: space-around;
+        padding: 4px;
+    }
+
+    .foodCartBill {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ------------------------------------------------------------- */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #9c8218;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 22px;
+        width: 22px;
+        left: 5px;
+        bottom: 1px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #eb6a14;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #eb6a14;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 24px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    /* ------------------------------------------------------------- */
+
+    .warenkorb {
+        width: 100%;
+        min-width: 280px;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+    .warenkorb:hover {
+        width: 100%;
+        min-width: 280px;
+        background-color: #ffccaa;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+    nav {
+        height: 180px;
+        background-image: url(./assets/img/fireinthehole.jpg);
+        display: flex;
+    }
+
+.footer_span {
+    color: rgb(67, 67, 67);
+    font-size: 20px;
+    font-weight: 700;
+    -webkit-text-stroke: 0.3px aliceblue;
+    display: flex;
+        justify-content: center;
+        text-align: center;
 }
-
-
-/* -------------------------------------------------------------- */
-/* -------------------------------------------------------------- */
-/* -------------------------------------------------------------- */
+}

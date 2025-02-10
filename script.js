@@ -18,6 +18,7 @@ let nav_imageRef = document.getElementById("nav_image");
 let nav_image = nav_imageRef;
 let nav_spanRef = document.getElementById("nav_span");
 let nav_span = nav_spanRef;
+let billRef = document.getElementById("bill");
 let switchButtonState = 0;
 let delivery = 1500;
 
@@ -95,5 +96,20 @@ function toggleWarenkorb() {
         nav_div.classList.toggle("jcc");
         nav_image.classList.toggle("displayNone");
         nav_span.classList.toggle("padding0");
+    }
+}
+
+function orderAndPay() {
+  
+    let text;
+    if (confirm("Möchten Sie die Bestellung abschließen?") == true) {
+        alert("Vielen Dank, Sie haben gerade bestellt!");
+        allCartPizzi.forEach((item) => {
+            item.amount = 0;
+        });
+        cartContent.innerHTML = "";
+        renderCart();
+    } else {
+        alert("Sie haben die Bestellung abgelehnt!");
     }
 }
