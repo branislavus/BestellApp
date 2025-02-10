@@ -45,6 +45,7 @@ nav {
 }
 
 .restaurantContent {
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -61,7 +62,7 @@ nav {
 }
 
 .textShadowAppraisal {
-    padding-left: 24px;
+    padding-left: 0;
     display: flex;
     -webkit-text-stroke: 0.5px aliceblue;
     margin-left: 10px;
@@ -89,6 +90,7 @@ nav {
     min-width: 320px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-top: 20px;
 }
 
@@ -101,8 +103,8 @@ nav {
     height: 100px;
     animation: flybirds 50s linear infinite;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: flex-start;
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
     box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
 }
@@ -153,11 +155,31 @@ nav {
     border-radius: 0 20px 0 0;
 }
 
+.foodCardButton {
+    height: 50px;
+    width: 50px;
+    margin-right: 30px;
+}
+
+
+
+.foodCardImage {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+
 .foodCardButtonToCartImg {
     height: 50px;
     width: 50px;
     border-radius: 28px;
     background-color: #eb6a14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease-in;
 }
 
 .foodCardButtonToCartImg:hover {
@@ -165,6 +187,10 @@ nav {
     width: 50px;
     border-radius: 28px;
     background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease-out;
 }
 
 .foodCardInfo {
@@ -188,6 +214,7 @@ nav {
 
 .nameFood {
     font-size: 32px;
+    margin-bottom: 2px;
 }
 
 .ingredientsFood {
@@ -198,30 +225,21 @@ nav {
     font-size: 22px;
 }
 
-.foodCardButtonToCart {
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-}
-
-.foodCardImage {
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 30px;
-}
 
 .cartLabel {
     padding: 10px;
     box-shadow: 0 2px 8px #21201826;
-    background-color: #ffffff;
+    background-color: #eb6a14;
+    transition: background-color 0.3s ease-in;
+    border: #eb6a14 1px solid;
 }
 
 .cartLabel:hover {
     padding: 10px;
     box-shadow: 0 2px 8px #21201826;
-    background-color: #eb6a14;
-
+    background-color: #ffcba9;
+    transition: background-color 0.3s ease-out;
+    border: black 1px solid;
 }
 
 .cartTextCenter {
@@ -259,6 +277,10 @@ nav {
     height: 24px;
     background-color: #eb6a14;
     border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s ease-in;
 }
 
 
@@ -267,16 +289,26 @@ nav {
     width: 24px;
     height: 24px;
     border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s ease-out;
 }
 
 .foodCartButtonDelete {
     background-color: #ffffff;
     border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .foodCartButtonDelete:hover {
     border-radius: 7px;
     box-shadow: 0 4px 20px 0 rgb(255, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .foodCartBilling {
@@ -310,7 +342,7 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #9c8218;
+    background-color: #a2a2a2;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -362,10 +394,7 @@ input:checked+.slider:before {
     padding-left: 0px;
 }
 
-.warenkorb:hover {
-    background-color: #ffccaa;
 
-}
 
 footer {
     height: 180px;
@@ -378,15 +407,21 @@ footer {
 }
 
 .footer_span {
+    height: 80px;
     color: rgb(67, 67, 67);
-    font-size: 32px;
+    font-size: 18px;
     font-weight: 700;
     -webkit-text-stroke: 0.3px aliceblue;
-    
+    margin-top: 2px;
 }
 
-.buttonOrder{
+.buttonOrder {
     margin-top: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
 }
 
 /* -------------------------------------------------------------- */
@@ -430,12 +465,12 @@ footer {
     }
 
     .nav_span {
-        color: aliceblue;
-        -webkit-text-stroke: 2px black;
+        color: black;
+        -webkit-text-stroke: 1px aliceblue;
         font-size: 72px;
         font-weight: 700;
         padding-left: 10px;
-        padding-right: 60px;
+        padding-right: 10px;
         display: flex;
         justify-content: center;
     }
@@ -458,11 +493,12 @@ footer {
     }
 
     .textShadowAppraisal {
-        padding-left: 24px;
+        padding-left: 0px;
         display: flex;
         -webkit-text-stroke: 0.5px aliceblue;
         margin-left: 10px;
         margin-bottom: 10px;
+
     }
 
 
@@ -487,7 +523,8 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .flydemo {
@@ -555,11 +592,21 @@ footer {
         word-break: break-all;
     }
 
+    .foodCardButton {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 20px;
+    }
+
+
     .foodCardButtonToCartImg {
         height: 50px;
         width: 50px;
         border-radius: 28px;
         background-color: #eb6a14;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .foodCardButtonToCartImg:hover {
@@ -567,6 +614,9 @@ footer {
         width: 50px;
         border-radius: 28px;
         background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .foodCardInfo {
@@ -587,6 +637,7 @@ footer {
 
     .nameFood {
         font-size: 32px;
+        margin-bottom: 10px;
     }
 
     .ingredientsFood {
@@ -602,6 +653,9 @@ footer {
         width: 30px;
         height: 30px;
         margin-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .foodCardImage {
@@ -611,13 +665,15 @@ footer {
     .cartLabel {
         padding: 10px;
         box-shadow: 0 2px 8px #21201826;
-        background-color: #ffffff;
+        background-color: #eb6a14;
+        border: #eb6a14 1px solid;
     }
 
     .cartLabel:hover {
         padding: 10px;
         box-shadow: 0 2px 8px #21201826;
-        background-color: #eb6a14;
+        background-color: #ffcba9;
+        border: black 1px solid;
 
     }
 
@@ -656,6 +712,10 @@ footer {
         height: 24px;
         background-color: #eb6a14;
         border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s ease-in;
     }
 
 
@@ -664,6 +724,10 @@ footer {
         width: 24px;
         height: 24px;
         border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.1s ease-out;
     }
 
     .foodCartButtonDelete {
@@ -707,7 +771,7 @@ footer {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #9c8218;
+        background-color: #a2a2a2;
         -webkit-transition: .4s;
         transition: .4s;
     }
@@ -754,6 +818,7 @@ footer {
         padding-left: 0px;
         display: flex;
         align-items: center;
+        padding-top: 10px;
     }
 
     .shopPoints {
@@ -764,14 +829,22 @@ footer {
     }
 
     .warenkorb {
+        background-color: #cccccc;
         display: flex;
         justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease-in;
+        border-radius: 3px;
+        border: none;
     }
 
     .warenkorb:hover {
-        background-color: #ffccaa;
+        background-color: #e8e8e8;
         display: flex;
         justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease-out;
+        border: none;
     }
 
 
@@ -819,9 +892,9 @@ footer {
 
     .nav_span {
         width: 100%;
-        color: black ;
+        color: black;
         -webkit-text-stroke: 1px aliceblue;
-        font-size: 30px;
+        font-size: 42px;
         font-weight: 700;
         padding-left: 0;
         padding-right: 0;
@@ -841,15 +914,15 @@ footer {
     }
 
     .textShadow {
-     
-        padding-left: 24px;
+
+        padding-left: 0px;
         display: flex;
         -webkit-text-stroke: 0.8px aliceblue;
         margin-left: 0;
     }
 
     .textShadowAppraisal {
-        padding-left: 24px;
+        padding-left: 0;
         display: flex;
         -webkit-text-stroke: 0.5px aliceblue;
         margin-left: 0;
@@ -875,14 +948,14 @@ footer {
         min-width: 280px;
         position: sticky;
         top: 10px;
-        
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin-top: 20px;
     }
 
-    .flyDemoWarenkorb{
+    .flyDemoWarenkorb {
         background: url(./assets/img/fireInTheHole.jpg) repeat-x;
         width: 100%;
         margin: 0;
@@ -894,7 +967,7 @@ footer {
         flex-direction: column;
         justify-content: flex-end;
         -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
-        box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);  
+        box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
     }
 
     .flydemo {
@@ -988,6 +1061,9 @@ footer {
         width: 50px;
         border-radius: 28px;
         background-color: #eb6a14;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .foodCardButtonToCartImg:hover {
@@ -995,6 +1071,9 @@ footer {
         width: 50px;
         border-radius: 28px;
         background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .foodCardInfo {
@@ -1004,7 +1083,6 @@ footer {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding-top: 10px;
         padding-bottom: 10px;
 
     }
@@ -1015,6 +1093,7 @@ footer {
 
     .nameFood {
         font-size: 32px;
+        margin-bottom: 10px;
     }
 
     .ingredientsFood {
@@ -1030,6 +1109,9 @@ footer {
         width: 30px;
         height: 30px;
         margin-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .foodCardImage {
@@ -1037,16 +1119,17 @@ footer {
     }
 
     .cartLabel {
-      
+
         box-shadow: 0 2px 8px #21201826;
-        background-color: #ffffff;
+        background-color: #eb6a14;
+        border: #eb6a14 1px solid;
     }
 
     .cartLabel:hover {
-   
-        box-shadow: 0 2px 8px #21201826;
-        background-color: #eb6a14;
 
+        box-shadow: 0 2px 8px #21201826;
+        background-color: #ffcba9;
+        border: black 1px solid;
     }
 
     .cartTextCenter {
@@ -1088,6 +1171,7 @@ footer {
         height: 24px;
         background-color: #eb6a14;
         border-radius: 12px;
+        transition: background-color 0.1s ease-in;
     }
 
 
@@ -1096,6 +1180,7 @@ footer {
         width: 24px;
         height: 24px;
         border-radius: 12px;
+        transition: background-color 0.1s ease-out;
     }
 
     .foodCartButtonDelete {
@@ -1110,8 +1195,10 @@ footer {
 
     .foodCartBilling {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 4px;
+        padding-right: 20px;
+        padding-left: 20px;
     }
 
     .foodCartBill {
@@ -1141,7 +1228,7 @@ footer {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #9c8218;
+        background-color: #a2a2a2;
         -webkit-transition: .4s;
         transition: .4s;
     }
@@ -1184,20 +1271,26 @@ footer {
     /* ------------------------------------------------------------- */
 
     .warenkorb {
+        background-color: #cccccc;
         width: 100%;
         min-width: 280px;
         display: flex;
         justify-content: center;
+        align-items: center;
         padding-bottom: 10px;
+        padding-top: 10px;
     }
 
     .warenkorb:hover {
         width: 100%;
         min-width: 280px;
-        background-color: #ffccaa;
+
+        background-color: #e8e8e8;
         display: flex;
         justify-content: center;
+        align-items: center;
         padding-bottom: 10px;
+        padding-top: 10px;
     }
 
     nav {
@@ -1206,13 +1299,15 @@ footer {
         display: flex;
     }
 
-.footer_span {
-    color: rgb(67, 67, 67);
-    font-size: 20px;
-    font-weight: 700;
-    -webkit-text-stroke: 0.3px aliceblue;
-    display: flex;
+    .footer_span {
+        height: 96px;
+        color: rgb(67, 67, 67);
+        font-size: 14px;
+        font-weight: 300;
+        -webkit-text-stroke: 0.3px aliceblue;
+        display: flex;
         justify-content: center;
         text-align: center;
-}
+        margin-top: 4px;
+    }
 }

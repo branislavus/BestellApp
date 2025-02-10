@@ -17,6 +17,10 @@ a {
     display: flex;
 }
 
+.fdc{
+    flex-direction: column;
+}
+
 .displayNone{
     display: none;
 }

@@ -79,11 +79,12 @@ function subMeal(index) {
 
 function deleteMeal(index) {
     allCartPizzi[index].amount = 0;
+    setCheckboxTrue();
     renderCart();
 }
 
 function toggleWarenkorb() {
-    if (billContent == "") {
+    if (billContent == "" || cartContent.innerHTML == "") {
         return;
     } else {
         foodContent.classList.toggle("margin0");
@@ -100,7 +101,6 @@ function toggleWarenkorb() {
 }
 
 function orderAndPay() {
-  
     let text;
     if (confirm("Möchten Sie die Bestellung abschließen?") == true) {
         alert("Vielen Dank, Sie haben gerade bestellt!");

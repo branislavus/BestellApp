@@ -2,16 +2,15 @@ function getCartTemplate(j,sumOfPizzi){
     return `    <div id="foodCart${j}" class="foodCart">
                     <h3 class="cartTextCenter">${allCartPizzi[j].name}</h3>
                     <div id="cartButtonsTotal" class="cartButtonsTotal">
-                        <div id="cartButtonsTotalAmount" class="cartButtonsTotalAmount"> <a href="#"
+                        <div id="cartButtonsTotalAmount" class="cartButtonsTotalAmount"> <button
                                  onclick="subMeal(${j})" id="foodCartButtons"><img class="foodCartButtons" src="./assets/icons/minus-button.png"
-                                    alt=""></a>
+                                    alt=""></button>
                             <h5>${allCartPizzi[j].amount}</h5>
-                            <a href="#"  onclick="addMeal(${j})" id="foodCartButtons"><img class="foodCartButtons"
-                                    src="./assets/icons/add-button.png" alt=""></a>
+                            <button onclick="addMeal(${j})" id="foodCartButtons"><img class="foodCartButtons"
+                    src="./assets/icons/add-button.png" alt=""></button>
                         </div>
                         <h5 class="df aic">${sumOfPizzi} €</h5>
-                        <a href="#"  onclick="deleteMeal(${j})" id="foodCartButtons"><img class="foodCartButtons foodCartButtonDelete" src="./assets/icons/dustbin.png"
-                                alt=""></a>
+                       <button onclick="deleteMeal(${j})" id="foodCartButtons"><img class="foodCartButtons foodCartButtonDelete" src="./assets/icons/dustbin.png" alt=""></button>
                     </div>
                     <div id="foodCardInfo" class="foodCardInfo">
                     </div>
@@ -28,8 +27,7 @@ function getfoodContentTemplate(i){
                     </div>
                     <img id="foodCardImage" class="foodCardImage" src="./assets/img/${pizzi[i].picture}" alt="">
                     <div id="foodCardButton" class="foodCardButton">
-                        <a href="#" id="foodCardButtonToCart" onclick="moveChosenMealToCart(${i})"><img class="foodCardButtonToCartImg" id="foodCardButtonToCartImg" value="${i}"
-                                src="./assets/icons/add-button.png" alt=""></a>
+                       <button id="foodCardButtonToCart" onclick="moveChosenMealToCart(${i})"><img class="foodCardButtonToCartImg" id="foodCardButtonToCartImg" value="${i}" src="./assets/icons/add-button.png" alt=""></button>
                     </div>
                 </div>`
 }
@@ -48,7 +46,7 @@ function getBillingTemplate(bill,billAndDelivery,delivery){
                         <p id="" class="cartTextCenter">Selbstabholung:</p>
                         <div >
                             <label  class="switch" for="myCheckBox">
-                              <input  id="myCheckBox" type="checkbox" role="switch" onclick="toggleCheckbox()" checked>
+                              <input  id="myCheckBox" type="checkbox" role="switch" onclick="toggleCheckbox()" >
                               <span class="slider round"></span>
                             </label>
                         </div>

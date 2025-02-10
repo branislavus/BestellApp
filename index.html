@@ -18,7 +18,7 @@
 
 <body id="body" onload="render()">
     <nav>
-        <div class="nav_div" id="nav_div">
+        <div class="nav_div flydemo" id="nav_div">
             <img class="nav_image"  id="nav_image" src="./assets/icons/pizza-slice.svg" alt="favicon">
             <span class="nav_span"  id="nav_span">BestellApp</span>
         </div>
@@ -26,7 +26,7 @@
     <div class="allContent">
         <div id="restaurantContent" class="restaurantContent">
             <div id="foodContent" class="foodContent">
-                <div id="flydemo" class=" flydemo">
+                <div id="flydemo" class=" flydemo df fdc jcc aic">
                     <h1 id="shopTitle" class="textShadow shopTitle">Pizzeria Paradiso</h1>
                     <h3 id="shopAppraisal" class="textShadowAppraisal shopAppraisal">Bewertung (4,4 von 5 Sternen)</h3>
                 </div>
@@ -34,17 +34,14 @@
                 </div>
             </div>
             <div id="cartContent" class="cartContent">
-                <a href="#" id="warenkorb" class="warenkorb" onclick=" toggleWarenkorb()">
-                    <h1 class="cartTextCenter cartLabel">Warenkorb</h1>
-                </a>
-                
+                <button  id="warenkorb" class="warenkorb" onclick=" toggleWarenkorb()"> <h1 class="cartTextCenter cartLabel">Warenkorb</h1></button>
+              
                 <div id="renderCartContent" class="renderCartContent">
                 </div>
                 <div id="renderBillContent" class="renderBillContent">
                 </div>
-                <a href="#" id="buttonOrder" class="warenkorb buttonOrder" onclick=" orderAndPay()">
-                    <h1 class="cartTextCenter cartLabel">Bezahlen</h1>
-                </a>
+                <button id="buttonOrder" class="warenkorb buttonOrder" onclick=" orderAndPay()">  <h1 class="cartTextCenter cartLabel">Bezahlen</h1></button>
+
             </div>
         </div>
     </div>
