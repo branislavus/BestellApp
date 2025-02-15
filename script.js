@@ -12,13 +12,16 @@ let shopAppraisalRef = document.getElementById("shopAppraisal");
 let shopAppraisal = shopAppraisalRef;
 let shopTitleRef = document.getElementById("shopTitle");
 let shopTitle = shopTitleRef;
-let nav_divRef = document.getElementById("nav_div");
-let nav_div = nav_divRef;
+let nav_divRef = document.getElementById("nav");
+let nav = nav_divRef;
 let nav_imageRef = document.getElementById("nav_image");
 let nav_image = nav_imageRef;
 let nav_spanRef = document.getElementById("nav_span");
 let nav_span = nav_spanRef;
 let billRef = document.getElementById("bill");
+let warenkorbTextRef = document.getElementById('warenkorbText');
+let warenkorbText = warenkorbTextRef;
+let warenkorb = document.getElementById('warenkorb');
 let switchButtonState = 0;
 let delivery = 1500;
 
@@ -65,43 +68,46 @@ function countTotal() {
 function moveChosenMealToCart(index) {
     ++allCartPizzi[index].amount;
     renderCart();
+    pizzaCountAmountInCart();
 }
 
 function addMeal(index) {
     ++allCartPizzi[index].amount;
     renderCart();
+    pizzaCountAmountInCart();
 }
 
 function subMeal(index) {
     --allCartPizzi[index].amount;
     renderCart();
+    pizzaCountAmountInCart();
 }
 
 function deleteMeal(index) {
     allCartPizzi[index].amount = 0;
     setCheckboxTrue();
     renderCart();
+    pizzaCountAmountInCart();
 }
 
 function toggleWarenkorb() {
-    if (billContent == "" || cartContent.innerHTML == "") {
-        return;
+    foodContent.classList.toggle('dNone');
+    nav.classList.toggle('dNone');
+    restaurantContent.classList.toggle("fdc");
+    restaurantContent.classList.toggle("jcfs");
+    billContent.classList.toggle('dBlock');
+    cartContent.classList.toggle('dBlock');
+    warenkorb.classList.toggle('positionFixedTop');
+    billContent.classList.toggle('positionFixedBottom');
+    if (warenkorbText.innerText == 'Warenkorb schließen!') {
+        warenkorbText.innerText = 'Warenkorb'
     } else {
-        foodContent.classList.toggle("margin0");
-        restaurantContent.classList.toggle("flexDirCol");
-        restaurantContent.classList.toggle("aic");
-        shopAppraisal.classList.toggle("shopPoints");
-        shopAppraisal.classList.toggle("margin0");
-        shopTitle.classList.toggle("shopTitle");
-        foodContent.classList.toggle("displayNone");
-        nav_div.classList.toggle("jcc");
-        nav_image.classList.toggle("displayNone");
-        nav_span.classList.toggle("padding0");
+        warenkorbText.innerText = 'Warenkorb schließen!';
     }
+    pizzaCountAmountInCart();
 }
 
 function orderAndPay() {
-    let text;
     if (confirm("Möchten Sie die Bestellung abschließen?") == true) {
         alert("Vielen Dank, Sie haben gerade bestellt!");
         allCartPizzi.forEach((item) => {
@@ -112,4 +118,15 @@ function orderAndPay() {
     } else {
         alert("Sie haben die Bestellung abgelehnt!");
     }
+    countTotal();
+    pizzaCountAmountInCart();
+}
+
+function pizzaCountAmountInCart() {
+    let warenkorbP = document.getElementById('warenkorbP');
+    let myCount = 0;
+    for (let index = 0; index < allCartPizzi.length; index++) {
+        myCount += allCartPizzi[index].amount;
+    }
+    warenkorbP.innerText = " " + myCount + "St." ;
 }

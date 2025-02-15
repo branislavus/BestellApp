@@ -33,8 +33,16 @@ a {
     align-items: center;
 }
 
+.ais{
+    align-items: start;
+}
+
 .jcc{
     justify-content: center;
+}
+
+.jcfs{
+    justify-content: flex-start;
 }
 
 .flexDirCol{
@@ -53,3 +61,27 @@ a {
     padding: 0;
 }
 
+.positionFixedBottom{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    /* z-index: 1; */
+    width: 100%;
+}
+
+.positionFixedTop{
+    position: fixed;
+    left: 0;
+    top: 0px;
+    /* z-index: 1; */
+    width: 100%;
+    height: 56px;
+}
+
+.dNone{
+display: none;
+}
+
+.dBlock{
+    display: block;
+}

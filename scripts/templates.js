@@ -55,5 +55,6 @@ function getBillingTemplate(bill,billAndDelivery,delivery){
                         <p id="" class="cartTextCenter"><strong>Gesamt:</strong></p>
                         <h3 id="billAndDelivery" class="cartTextCenter">${billAndDelivery} €</h3>
                     </div>
-                </div>`
+                </div>
+                 <button id="buttonOrder" class="warenkorb buttonOrder" onclick=" orderAndPay()">  <h1 class="cartTextCenter cartLabel">Bezahlen</h1></button>`
 }

@@ -1,10 +1,13 @@
 body {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
+.allContent {
+    overflow: auto;
+}
 
 nav {
     height: 180px;
@@ -46,7 +49,7 @@ nav {
 }
 
 .restaurantContent {
-    min-height: 100vh;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -79,20 +82,20 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 
 .cartContent {
-    height: 100%;
+    height: calc(100vh - 280px);
     width: 300px;
-    position: sticky;
-    top: 10px;
     min-width: 320px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 20px;
+    overflow: auto;
 }
 
 .flydemo {
@@ -226,13 +229,17 @@ nav {
     font-size: 22px;
 }
 
+.warenkorbTurOff {
+    display: none;
+}
 
 .cartLabel {
     padding: 10px;
-    box-shadow: 0 2px 8px #21201826;
     background-color: #eb6a14;
     transition: background-color 0.3s ease-in;
     border: #eb6a14 1px solid;
+    display: flex;
+    justify-content: center;
 }
 
 .cartLabel:hover {
@@ -241,19 +248,24 @@ nav {
     background-color: #ffcba9;
     transition: background-color 0.3s ease-out;
     border: black 1px solid;
+    display: flex;
+    justify-content: center;
 }
 
 .cartTextCenter {
     text-align: center;
-
 }
 
 .foodCart {
+    width: 100%;
     margin-top: 10px;
     padding-top: 10px;
     box-shadow: 0 2px 8px #21201826;
     border-top: 0.5px solid #e6e6e6;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -319,7 +331,10 @@ nav {
 }
 
 .foodCartBill {
-    padding: 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* ------------------------------------------------------------- */
@@ -398,31 +413,78 @@ input:checked+.slider:before {
 
 
 footer {
-    height: 180px;
+    height: 60px;
     width: 100%;
     background-color: #eb6a14;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    position: fixed;
+    bottom: 0;
 }
 
 .footer_span {
-    height: 80px;
-    color: rgb(67, 67, 67);
+    height: 30px;
+    color: rgb(0, 0, 0);
     font-size: 18px;
     font-weight: 700;
-    -webkit-text-stroke: 0.3px aliceblue;
+    -webkit-text-stroke: 0.3px rgb(95, 95, 95);
     margin-top: 2px;
 }
 
+
+
 .buttonOrder {
-    margin-top: 10px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
     width: 100%;
+    margin-top: 10px;
+
+}
+
+.warenkorbP {
+    height: 30px;
+    width: 30px;
+    font-size: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    border: #000000 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+
+
+@media only screen and (min-width: 1300px) {
+    .buttonZurueck {
+        display: block;
+        width: 100%;
+        background-color: #cccccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 0;
+        transition: background-color 0.3s ease-in;
+        border-radius: 3px;
+        border: none;
+    }
+
+    .cartLabelFake {
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0 2px 8px #21201826;
+        background-color: #eb6a14;
+        transition: background-color 0.3s ease-in;
+        border: #eb6a14 1px solid;
+        display: flex;
+        justify-content: center;
+        
+    }
 }
 
 /* -------------------------------------------------------------- */
@@ -431,8 +493,27 @@ footer {
 
 @media only screen and (max-width: 1300px) {
 
+
+    .renderCartContent {
+        display: none;
+    }
+
+    .renderBillContent {
+        display: none;
+    }
+
+
+    .buttonZurueck {
+        display: none;
+    }
+
+    .cartLabelFake {
+        display: none;
+    }
+
+
     .renderFoodContent {
-        height: auto;
+        height: calc(100vh - 300px);
         width: 100%;
     }
 
@@ -516,23 +597,22 @@ footer {
 
 
     .cartContent {
-        height: 100%;
+        height: calc(100vh - 280px);
         width: 100%;
-        position: sticky;
-        top: 10px;
-        min-width: 320px;
+        min-width: 280px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin-top: 10px;
-        margin-bottom: 10px;
+        overflow: auto;
+        z-index: 1;
     }
 
     .flydemo {
         background: url(./assets/img/fireinthehole.jpg) repeat-x;
         width: 100%;
         margin: 0;
-        border-radius: 20px 20px 0 0;
+        border-radius: 0;
 
         height: auto;
         animation: flybirds 50s linear infinite;
@@ -542,7 +622,6 @@ footer {
         -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
         box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
         margin-bottom: 20px;
-        margin-top: 20px;
         display: flex;
         align-items: center;
     }
@@ -664,31 +743,40 @@ footer {
     }
 
     .cartLabel {
-        padding: 10px;
-        box-shadow: 0 2px 8px #21201826;
+        width: 100%;
+        padding-top: 10px;
         background-color: #eb6a14;
+        transition: background-color 0.3s ease-in;
         border: #eb6a14 1px solid;
+        display: flex;
+        justify-content: center;
     }
 
     .cartLabel:hover {
-        padding: 10px;
+        padding-top: 10px;
         box-shadow: 0 2px 8px #21201826;
         background-color: #ffcba9;
         border: black 1px solid;
-
+        transition: background-color 0.3s ease-out;
+        display: flex;
+        justify-content: center;
     }
 
     .cartTextCenter {
+        height: 100%;
         text-align: center;
-
     }
 
     .foodCart {
+        width: 100%;
         margin-top: 10px;
         padding-top: 10px;
         box-shadow: 0 2px 8px #21201826;
         border-top: 0.5px solid #e6e6e6;
         background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
 
@@ -748,7 +836,10 @@ footer {
     }
 
     .foodCartBill {
-        padding: 16px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     /* ------------------------------------------------------------- */
@@ -830,26 +921,63 @@ footer {
     }
 
     .warenkorb {
-        background-color: #cccccc;
+        background-color: #eb6a14;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 10px;
+        margin-bottom: 0;
         transition: background-color 0.3s ease-in;
         border-radius: 3px;
         border: none;
+
     }
 
     .warenkorb:hover {
-        background-color: #e8e8e8;
+        background-color: #eb6a14;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 10px;
+        margin-bottom: 0px;
         transition: background-color 0.3s ease-out;
         border: none;
+
+    }
+
+    .buttonCart {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        border-top: #a2a2a2 1px solid;
+    }
+
+    footer {
+        height: 30px;
+        width: 100%;
+        background-color: #eb6a14;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .contentAreaAdjust {
+        position: relative;
+        width: auto;
+        height: calc(100vh - 340px);
     }
 
 
 }
+
+
+.buttonOrder {
+    margin-top: 10px;
+}
+
 
 
 /* -------------------------------------------------------------- */
@@ -858,8 +986,16 @@ footer {
 
 @media only screen and (max-width: 768px) {
 
+    .renderCartContent {
+        display: none;
+    }
+
+    .renderBillContent {
+        display: none;
+    }
+
     .renderFoodContent {
-        height: auto;
+        height: calc(100vh - 300px);
         width: 100%;
     }
 
@@ -944,16 +1080,12 @@ footer {
 
 
     .cartContent {
-        height: auto;
         width: 100%;
-        min-width: 280px;
-        position: sticky;
-        top: 10px;
-
+        height: calc(100vh - 280px);
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 0px;
     }
 
     .flyDemoWarenkorb {
@@ -975,20 +1107,18 @@ footer {
         background: url(./assets/img/fireinthehole.jpg) repeat-x;
         width: 100%;
         margin: 0;
-        border-radius: 20px 20px 0 0;
-
-        height: auto;
+        border-radius: 0;
+        height: 100%;
         animation: flybirds 50s linear infinite;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
         box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
-        margin-bottom: 20px;
-        margin-top: 20px;
+        margin: 0px;
         padding-top: 10px;
-        display: flex;
-        align-items: center;
+
     }
 
     @keyframes flybirds {
@@ -1120,22 +1250,32 @@ footer {
     }
 
     .cartLabel {
-
-        box-shadow: 0 2px 8px #21201826;
+        width: 100%;
+        padding-top: 10px;
         background-color: #eb6a14;
+        transition: background-color 0.3s ease-in;
         border: #eb6a14 1px solid;
+        display: flex;
+        justify-content: center;
     }
 
     .cartLabel:hover {
-
+        padding-top: 10px;
         box-shadow: 0 2px 8px #21201826;
         background-color: #ffcba9;
         border: black 1px solid;
+        transition: background-color 0.3s ease-out;
+        display: flex;
+        justify-content: center;
     }
 
     .cartTextCenter {
+        height: 100%;
         text-align: center;
-
+        font-size: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .foodCart {
@@ -1206,6 +1346,7 @@ footer {
         padding: 0px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
     }
 
     /* ------------------------------------------------------------- */
@@ -1272,26 +1413,26 @@ footer {
     /* ------------------------------------------------------------- */
 
     .warenkorb {
-        background-color: #cccccc;
-        width: 100%;
-        min-width: 280px;
+        background-color: #eb6a14;
+        min-width: 300px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-bottom: 10px;
-        padding-top: 10px;
+        margin-top: 10px;
+        margin-bottom: 0;
+
     }
 
     .warenkorb:hover {
+        background-color: #eb6a14;
         width: 100%;
-        min-width: 280px;
-
-        background-color: #e8e8e8;
+        min-width: 300px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-bottom: 10px;
-        padding-top: 10px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+
     }
 
     nav {
@@ -1301,14 +1442,39 @@ footer {
     }
 
     .footer_span {
-        height: 96px;
-        color: rgb(67, 67, 67);
+        height: 50px;
+        color: rgb(0, 0, 0);
         font-size: 14px;
         font-weight: 300;
-        -webkit-text-stroke: 0.3px aliceblue;
+        -webkit-text-stroke: 0.1px rgb(77, 77, 77);
         display: flex;
         justify-content: center;
         text-align: center;
         margin-top: 4px;
     }
+
+    footer {
+        height: 50px;
+        width: 100%;
+        background-color: #eb6a14;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .buttonZurueck {
+        display: none;
+    }
+
+    .buttonOrder {
+        margin-top: 10px;
+    }
+
+    .contentAreaAdjust {
+        position: relative;
+        width: auto;
+        height: calc(100vh - 340px);
+    }
+
 }

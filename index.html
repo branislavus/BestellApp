@@ -17,7 +17,7 @@
 </head>
 
 <body id="body" onload="render()">
-    <nav>
+    <nav id="nav">
         <div class="nav_div flydemo" id="nav_div">
             <img class="nav_image"  id="nav_image" src="./assets/icons/pizza-slice.svg" alt="favicon">
             <span class="nav_span"  id="nav_span">BestellApp</span>
@@ -34,14 +34,12 @@
                 </div>
             </div>
             <div id="cartContent" class="cartContent">
-                <button  id="warenkorb" class="warenkorb" onclick=" toggleWarenkorb()"> <h1 class="cartTextCenter cartLabel">Warenkorb</h1></button>
-              
-                <div id="renderCartContent" class="renderCartContent">
+                <button  id="buttonZurueck" class="warenkorb buttonCart buttonZurueck"> <h1 class="cartTextCenter cartLabelFake">Warenkorb</h1></button> 
+                <button  id="warenkorb" class="warenkorb warenkorbTurOff buttonCart" onclick=" toggleWarenkorb()"> <h1  id="warenkorbText" class="cartTextCenter cartLabel">Warenkorb</h1><p id="warenkorbP" class="warenkorbP"> 0 St.</p></button>  
+                <div id="renderCartContent" class="renderCartContent contentAreaAdjust">
                 </div>
                 <div id="renderBillContent" class="renderBillContent">
-                </div>
-                <button id="buttonOrder" class="warenkorb buttonOrder" onclick=" orderAndPay()">  <h1 class="cartTextCenter cartLabel">Bezahlen</h1></button>
-
+                </div>   
             </div>
         </div>
     </div>
