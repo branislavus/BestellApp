@@ -46,20 +46,27 @@ function renderCart() {
 function countTotal() {
     billContent.innerHTML = "";
     let result = [];
-    let element = 0;
     for (let index = 0; index < allCartPizzi.length; index++) {
         if (allCartPizzi[index].amount > 0) {
             let numberToMulti = allCartPizzi[index].totalPreis();
             result.push(numberToMulti);
         }
     }
+    countResultArray(result);
+}
+
+function countResultArray(result) {
+    let element = 0;
     if (result.length > 0) {
         for (let j = 0; j < result.length; j++) {
             element += parseFloat(result[j]);
         }
     }
-    let billHome = 0;
-    billHome = (element + switchButtonState + delivery) / 100;
+    renderGetBillingTemplate(element);
+}
+
+function renderGetBillingTemplate(element) {
+    let billHome = (element + switchButtonState + delivery) / 100;
     element = element / 100;
     let deliveryBracket = (delivery / 100) + " €";
     billContent.innerHTML += getBillingTemplate(element, billHome, deliveryBracket);
@@ -110,16 +117,13 @@ function toggleWarenkorb() {
 function orderAndPay() {
     if (confirm("Möchten Sie die Bestellung abschließen?") == true) {
         alert("Vielen Dank, Sie haben gerade bestellt!");
-        allCartPizzi.forEach((item) => {
-            item.amount = 0;
-        });
-        cartContent.innerHTML = "";
-        renderCart();
+        location.reload();
     } else {
         alert("Sie haben die Bestellung abgelehnt!");
     }
     countTotal();
     pizzaCountAmountInCart();
+   
 }
 
 function pizzaCountAmountInCart() {
@@ -128,5 +132,5 @@ function pizzaCountAmountInCart() {
     for (let index = 0; index < allCartPizzi.length; index++) {
         myCount += allCartPizzi[index].amount;
     }
-    warenkorbP.innerText = " " + myCount + "St." ;
+    warenkorbP.innerText = " " + myCount + "St.";
 }

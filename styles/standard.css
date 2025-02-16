@@ -85,3 +85,23 @@ display: none;
 .dBlock{
     display: block;
 }
+
+#alert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+}
+
+.cartContentHeight{
+    height: calc(100vh - 270px );
+}
+
+.renderFoodContentHeight {
+    height: calc(100vh - 300px);
+    width: 100%;
+}
