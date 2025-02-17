@@ -17,16 +17,16 @@
 </head>
 
 <body id="body" onload="render()">
-    <nav id="nav">
-        <div class="nav_div flydemo" id="nav_div">
-            <img class="nav_image"  id="nav_image" src="./assets/icons/pizza-slice.svg" alt="favicon">
-            <span class="nav_span"  id="nav_span">BestellApp</span>
+    <nav id="nav" class="nav">
+        <div class="nav_div flydemoMain" id="nav_div">
+            <img class="nav_image" id="nav_image" src="./assets/icons/pizza-slice.svg" alt="favicon">
+            <span class="nav_span" id="nav_span">BestellApp</span>
         </div>
     </nav>
     <div class="allContent" id="allContent">
         <div id="restaurantContent" class="restaurantContent">
             <div id="foodContent" class="foodContent">
-                <div id="flydemo" class=" flydemo df fdc jcc aic">
+                <div id="flydemo" class="flydemoFCRepair flydemo">
                     <h1 id="shopTitle" class="textShadow shopTitle">Pizzeria Paradiso</h1>
                     <h3 id="shopAppraisal" class="textShadowAppraisal shopAppraisal">Bewertung (4,4 von 5 Sternen)</h3>
                 </div>
@@ -34,16 +34,21 @@
                 </div>
             </div>
             <div id="cartContent" class="cartContent">
-                <button  id="buttonZurueck" class="warenkorb buttonCart buttonZurueck"> <h1 class="cartTextCenter cartLabelFake">Warenkorb</h1></button> 
-                <button  id="warenkorb" class="warenkorb warenkorbTurOff buttonCart" onclick=" toggleWarenkorb()"> <h1  id="warenkorbText" class="cartTextCenter cartLabel">Warenkorb</h1><p id="warenkorbP" class="warenkorbP"> 0 St.</p></button>  
+                <button id="warenkorb" class="warenkorb buttonCart" onclick=" toggleWarenkorb()">
+                    <h1 id="warenkorbText" class="cartTextCenter cartLabel">Warenkorb</h1>
+                    <div id="containerCartAndItem" class="container">
+                        <img id="shopping-cart" class="shopping-cart" src="./assets/icons/shopping-cart.png" alt="shopping-cart">
+                        <p id="warenkorbP" class="warenkorbP centered">0</p>
+                    </div>
+                </button>
                 <div id="renderCartContent" class="renderCartContent contentAreaAdjust">
                 </div>
                 <div id="renderBillContent" class="renderBillContent">
-                </div>   
+                </div>
             </div>
         </div>
     </div>
-    <footer>
+    <footer id="footer">
         <span class="footer_span">Copyright 2025 By Branislav®</span>
     </footer>
     <script src="./script.js"></script>

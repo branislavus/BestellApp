@@ -4,8 +4,10 @@ let cartContentRef = document.getElementById("renderCartContent");
 let cartContent = cartContentRef;
 let billContentRef = document.getElementById("renderBillContent");
 let billContent = billContentRef;
-let flyDemoRef = document.getElementById("flyDemo");
+let flyDemoRef = document.getElementById("flydemo");
 let flyDemo = flyDemoRef;
+let flyDemoMainRef = document.getElementById("flydemoMain");
+let flyDemoMain = flyDemoRef;
 let restaurantContentRef = document.getElementById("restaurantContent");
 let restaurantContent = restaurantContentRef;
 let shopAppraisalRef = document.getElementById("shopAppraisal");
@@ -22,6 +24,8 @@ let billRef = document.getElementById("bill");
 let warenkorbTextRef = document.getElementById('warenkorbText');
 let warenkorbText = warenkorbTextRef;
 let warenkorb = document.getElementById('warenkorb');
+let footerRef = document.getElementById('footer');
+let footer = footerRef;
 let switchButtonState = 0;
 let delivery = 1500;
 
@@ -98,14 +102,14 @@ function deleteMeal(index) {
 }
 
 function toggleWarenkorb() {
+    flyDemoMain.classList.toggle('dNone');
+    flyDemo.classList.toggle('dNone');
     foodContent.classList.toggle('dNone');
-    nav.classList.toggle('dNone');
     restaurantContent.classList.toggle("fdc");
-    restaurantContent.classList.toggle("jcfs");
-    billContent.classList.toggle('dBlock');
-    cartContent.classList.toggle('dBlock');
-    warenkorb.classList.toggle('positionFixedTop');
-    billContent.classList.toggle('positionFixedBottom');
+    restaurantContent.classList.toggle("jcc");
+    restaurantContent.classList.toggle("aic");
+    restaurantContent.classList.toggle("fullWidth300");
+    warenkorb.classList.toggle('positionFixedBottom');
     if (warenkorbText.innerText == 'Warenkorb schließen!') {
         warenkorbText.innerText = 'Warenkorb'
     } else {
@@ -132,5 +136,5 @@ function pizzaCountAmountInCart() {
     for (let index = 0; index < allCartPizzi.length; index++) {
         myCount += allCartPizzi[index].amount;
     }
-    warenkorbP.innerText = " " + myCount + "St.";
+    warenkorbP.innerText =  myCount ;
 }

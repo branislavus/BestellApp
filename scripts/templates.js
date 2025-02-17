@@ -27,7 +27,7 @@ function getfoodContentTemplate(i){
                     </div>
                     <img id="foodCardImage" class="foodCardImage" src="./assets/img/${pizzi[i].picture}" alt="">
                     <div id="foodCardButton" class="foodCardButton">
-                       <button id="foodCardButtonToCart" onclick="moveChosenMealToCart(${i})"><img class="foodCardButtonToCartImg" id="foodCardButtonToCartImg" value="${i}" src="./assets/icons/add-button.png" alt=""></button>
+                       <button id="foodCardButtonToCart" class="foodCardButtonToCart" onclick="moveChosenMealToCart(${i})"><img class="foodCardButtonToCartImg" id="foodCardButtonToCartImg" value="${i}" src="./assets/icons/add-button.png" alt=""></button>
                     </div>
                 </div>`
 }
