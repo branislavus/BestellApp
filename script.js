@@ -123,16 +123,16 @@ function toggleWarenkorb() {
 }
 
 function orderAndPay() {
-    buyScreenRef.innerHTML = getPaymentQuestion();
+    buyScreenRef.innerHTML = getYesAndNoQuestion();
 
     countTotal();
     pizzaCountAmountInCart();
-    location.reload();
+    
 }
 
 function clickedYes(){
-
-    messageOverlayRef.innerHTML = "Vielen Dank, Sie haben gerade bestellt!";
+    buyScreenRef.innerHTML = "";
+    buyScreenRef.innerHTML = getOKQuestion();
 }
 
 function clickedNo(){
@@ -140,7 +140,7 @@ function clickedNo(){
 }
 
 function OKQuestion(){
-    
+    location.reload();
 }
 
 function pizzaCountAmountInCart() {

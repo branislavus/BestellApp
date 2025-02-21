@@ -59,7 +59,7 @@ function getBillingTemplate(bill,billAndDelivery,delivery){
                  <button id="buttonOrder" class="warenkorb buttonOrder" onclick=" orderAndPay()">  <h1 class="cartTextCenter cartLabel">Bezahlen</h1></button>`
 }
 
-function getPaymentQuestion(){
+function getYesAndNoQuestion(){
     return `<div id="messageOverlay" class="messageOverlay">
                 <span id="messageQuestion" class="messageQuestion">Möchten Sie die Bestellung abschließen?</span>
                 <div id="buyAndCancelButtons" class="buyAndCancelButtons">
@@ -69,11 +69,12 @@ function getPaymentQuestion(){
             </div>`
 }
 
+
 function getOKQuestion(){
     return `<div id="messageOverlay" class="messageOverlay">
-                <span id="messageQuestion" class="messageQuestion">Möchten Sie die Bestellung abschließen?</span>
+                <span id="messageQuestion" class="messageQuestion">Vielen Dank, Sie haben gerade bestellt!</span>
                 <div id="buyAndCancelButtons" class="buyAndCancelButtons">
-                    <button id="okOrder" class="buyOrCancelOrder" type="submit" onclick="clickedOk()">OK</button>
+                    <button id="okOrder" class="buyOrCancelOrder" type="submit" onclick="OKQuestion()">OK</button>
                 </div>
             </div>`
 }
