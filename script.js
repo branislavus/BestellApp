@@ -26,6 +26,8 @@ let warenkorbText = warenkorbTextRef;
 let warenkorb = document.getElementById('warenkorb');
 let footerRef = document.getElementById('footer');
 let footer = footerRef;
+let messageOverlayRef = document.getElementById('messageOverlay');
+let buyScreenRef = document.getElementById('buyScreen');
 let switchButtonState = 0;
 let delivery = 1500;
 
@@ -110,6 +112,8 @@ function toggleWarenkorb() {
     restaurantContent.classList.toggle("aic");
     restaurantContent.classList.toggle("fullWidth300");
     warenkorb.classList.toggle('positionFixedBottom');
+    cartContent.classList.toggle('dBlock');
+    billContent.classList.toggle('dBlock');
     if (warenkorbText.innerText == 'Warenkorb schließen!') {
         warenkorbText.innerText = 'Warenkorb'
     } else {
@@ -119,15 +123,24 @@ function toggleWarenkorb() {
 }
 
 function orderAndPay() {
-    if (confirm("Möchten Sie die Bestellung abschließen?") == true) {
-        alert("Vielen Dank, Sie haben gerade bestellt!");
-        location.reload();
-    } else {
-        alert("Sie haben die Bestellung abgelehnt!");
-    }
+    buyScreenRef.innerHTML = getPaymentQuestion();
+
     countTotal();
     pizzaCountAmountInCart();
-   
+    location.reload();
+}
+
+function clickedYes(){
+
+    messageOverlayRef.innerHTML = "Vielen Dank, Sie haben gerade bestellt!";
+}
+
+function clickedNo(){
+    buyScreenRef.innerHTML = "";
+}
+
+function OKQuestion(){
+    
 }
 
 function pizzaCountAmountInCart() {
