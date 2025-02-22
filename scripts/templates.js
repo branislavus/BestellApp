@@ -21,7 +21,7 @@ function getfoodContentTemplate(i){
     return `<div id="foodCard" class="foodCard">
                     <div id="foodCardInfo" class="foodCardInfo">
                         <h2 class="nameFood">${pizzi[i].name}</h2>
-                        <h3 class="ingredientsFood">${pizzi[i].ingredients}</h3>
+                        <h3 class="ingredientsFood"> ${pizzi[i].ingredients} </h3>
                         <h4 class="infoFood">${pizzi[i].info}</h4>
                         <h4 class="preisFood">${pizzi[i].preis} €</h4>
                     </div>

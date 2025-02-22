@@ -1,5 +1,3 @@
-
-
 function toggleCheckbox() {
     if (cartContent.innerHTML == "") {
         myCheckBox.checked = false;

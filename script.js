@@ -1,29 +1,26 @@
-let foodContentRef = document.getElementById("renderFoodContent");
-let foodContent = foodContentRef;
-let cartContentRef = document.getElementById("renderCartContent");
-let cartContent = cartContentRef;
-let billContentRef = document.getElementById("renderBillContent");
-let billContent = billContentRef;
 let flyDemoRef = document.getElementById("flydemo");
 let flyDemo = flyDemoRef;
 let flyDemoMainRef = document.getElementById("flydemoMain");
 let flyDemoMain = flyDemoRef;
+let foodContentRef = document.getElementById("renderFoodContent");
+let foodContent = foodContentRef;
 let restaurantContentRef = document.getElementById("restaurantContent");
 let restaurantContent = restaurantContentRef;
+let cartBin = document.getElementById('warenkorb');
+let cartContentRef = document.getElementById("renderCartContent");
+let cartContent = cartContentRef;
+let billContentRef = document.getElementById("renderBillContent");
+let billContent = billContentRef;
+
+
 let shopAppraisalRef = document.getElementById("shopAppraisal");
 let shopAppraisal = shopAppraisalRef;
 let shopTitleRef = document.getElementById("shopTitle");
 let shopTitle = shopTitleRef;
-let nav_divRef = document.getElementById("nav");
-let nav = nav_divRef;
-let nav_imageRef = document.getElementById("nav_image");
-let nav_image = nav_imageRef;
-let nav_spanRef = document.getElementById("nav_span");
-let nav_span = nav_spanRef;
 let billRef = document.getElementById("bill");
-let warenkorbTextRef = document.getElementById('warenkorbText');
-let warenkorbText = warenkorbTextRef;
-let warenkorb = document.getElementById('warenkorb');
+let CartBinTextRef = document.getElementById('warenkorbText');
+let CartBinText = CartBinTextRef;
+
 let footerRef = document.getElementById('footer');
 let footer = footerRef;
 let messageOverlayRef = document.getElementById('messageOverlay');
@@ -111,32 +108,31 @@ function toggleWarenkorb() {
     restaurantContent.classList.toggle("jcc");
     restaurantContent.classList.toggle("aic");
     restaurantContent.classList.toggle("fullWidth300");
-    warenkorb.classList.toggle('positionFixedBottom');
+    cartBin.classList.toggle('positionFixedBottom');
     cartContent.classList.toggle('dBlock');
     billContent.classList.toggle('dBlock');
-    if (warenkorbText.innerText == 'Warenkorb schließen!') {
-        warenkorbText.innerText = 'Warenkorb'
+    if (CartBinText.innerText == 'Warenkorb schließen!') {
+        CartBinText.innerText = 'Warenkorb'
     } else {
-        warenkorbText.innerText = 'Warenkorb schließen!';
+        CartBinText.innerText = 'Warenkorb schließen!';
     }
     pizzaCountAmountInCart();
 }
 
 function orderAndPay() {
     buyScreenRef.innerHTML = getYesAndNoQuestion();
-
-    countTotal();
-    pizzaCountAmountInCart();
-    
+    on();
 }
 
 function clickedYes(){
     buyScreenRef.innerHTML = "";
     buyScreenRef.innerHTML = getOKQuestion();
+    on();
 }
 
 function clickedNo(){
     buyScreenRef.innerHTML = "";
+    off();
 }
 
 function OKQuestion(){
@@ -151,3 +147,11 @@ function pizzaCountAmountInCart() {
     }
     warenkorbP.innerText =  myCount ;
 }
+
+function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }

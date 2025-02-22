@@ -16,20 +16,58 @@ body {
     background-color: #ebebeb;
 }
 
-.messageOverlay{
-    background-color: var(--background-pink);
+.messageBuyAgain {
+    margin: 0 auto;
+    background: radial-gradient(var(--white), var(--background-pink));
+    border: var(--orange) 2px ridge;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    padding: 20px;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
+    border-top: 1px solid var(--orange);
+    border-left: 1px solid var(--orange);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: calc(20vh - 150px);
+    left: calc(95vw - 150px);
+    z-index: 10;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.messageOverlay {
+    margin: 0 auto;
+    background: radial-gradient(var(--white), var(--background-pink));
     border: var(--orange) 2px ridge;
     width: 280px;
     height: 200px;
     padding: 20px;
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
     box-shadow: 0px 10px 13px -7px #000000, 0px 2px 0px 8px rgba(0, 0, 0, 0);
-    border-top: 0.5px solid #bebebe;
-    border-left: 0.5px solid #bebebe;
+    border-top: 1px solid var(--orange);
+    border-left: 1px solid var(--orange);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     position: absolute;
     top: calc(50vh - 150px);
@@ -37,19 +75,19 @@ body {
     z-index: 10;
 }
 
-.messageQuestion{
+.messageQuestion {
     text-align: center;
     font-size: 28px;
 }
 
-.buyAndCancelButtons{
+.buyAndCancelButtons {
     width: 80%;
     display: flex;
     justify-content: space-around;
-    
+
 }
 
-.buyOrCancelOrder{
+.buyOrCancelOrder {
     height: 30px;
     width: 80px;
     border-radius: 8px;
@@ -60,7 +98,7 @@ body {
     transition: background-color 0.2s ease-in;
 }
 
-.buyOrCancelOrder:hover{
+.buyOrCancelOrder:hover {
     height: 30px;
     width: 80px;
     border-radius: 8px;
@@ -346,9 +384,9 @@ nav {
     cursor: pointer;
     width: 100%;
     padding: 10px;
-    background-color:  var(--orange);
+    background-color: var(--orange);
     transition: background-color 0.3s ease-in;
-    border:  var(--orange) 1px solid;
+    border: var(--orange) 1px solid;
     display: flex;
     justify-content: center;
 }
@@ -398,7 +436,7 @@ nav {
     cursor: pointer;
     width: 24px;
     height: 24px;
-    background-color:  var(--orange);
+    background-color: var(--orange);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -490,7 +528,7 @@ input:checked+.slider {
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px  var(--orange);
+    box-shadow: 0 0 1px var(--orange);
 }
 
 input:checked+.slider:before {
@@ -525,7 +563,7 @@ input:checked+.slider:before {
 footer {
     height: 50px;
     width: 100%;
-    background-color:  var(--orange);
+    background-color: var(--orange);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -560,7 +598,7 @@ footer {
 
 .warenkorb {
     width: 100%;
-    background-color:  var(--orange);
+    background-color: var(--orange);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -572,7 +610,7 @@ footer {
 
 .warenkorb:hover {
     width: 100%;
-    background-color:  var(--orange);
+    background-color: var(--orange);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -663,18 +701,18 @@ footer {
 
     .nav_div {
         justify-content: center
-
     }
 
     .flydemoMain {
         height: 50px;
     }
 
-    .flydemoMain{
+    .flydemoMain {
         border-radius: 0;
         margin: 0;
         padding: 0;
     }
+
     .flydemo {
         height: 50px;
         border-radius: 0;
@@ -709,12 +747,13 @@ footer {
         justify-content: center;
     }
 
-    .renderFoodContent{
+    .renderFoodContent {
         width: 100%;
         display: flex;
         flex-direction: column;
-        
+
     }
+
     .foodCardImage {
         height: 120px;
         width: 80%;
@@ -741,32 +780,45 @@ footer {
     }
 
     .nameFood {
-        font-size: 28px;
-        padding-left: 10px;
+        width: 100%;
+        text-align: center;
+        font-size: 22px;
     }
-    .preisFood{
-        padding-left: 10px;
+
+    .preisFood {
+        width: 100%;
+        text-align: center;
     }
 
     .ingredientsFood {
-        display: none;
+        font-size: 12px;
+        max-width: 100%;
+        text-align: center;
+        word-wrap: break-word;
+        white-space: pre-wrap;
     }
-    .foodCardInfo{
+
+    .foodCardInfo {
+        width: 82%;
         padding: 0;
-        justify-content: center;
+        margin: 2px;
+        justify-content: space-around;
     }
-    .foodCardButton{
+
+    .foodCardButton {
         margin: 0;
         margin-left: 10px;
         margin-right: 20px;
     }
-    .cartContent{
+
+    .cartContent {
         margin: 0;
     }
+
     .cartTextCenter {
         word-wrap: break-word;
-    
+
     }
-   
- 
+
+
 }
